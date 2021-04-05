@@ -4,7 +4,7 @@
 ## Commands
 
 ### open help menu
-`;help`- Get a list currently available commands. More commands soon :3 
+`;help`- Get a list of currently available commands. More commands soon :3 
 
 <img src="assets/ss-help.PNG" alt="help menu">
 
@@ -38,7 +38,7 @@ Subjectivity: [0,1]
 
 ## Guide to Running TextBot Locally
 
-1. Create a new application on [Discord Developer Portal](https://discord.com/developers/applications). Create a bot and copy the token. Invite the bot to one of your servers too.
+1. Create a new application on [Discord Developer Portal](https://discord.com/developers/applications). Add a bot and copy the token. Invite the bot to one of your servers too.
 
 2. Clone this repository.
 
