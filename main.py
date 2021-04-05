@@ -142,7 +142,7 @@ async def help(ctx):
     m = discord.Embed()
     m.title = 'Help :scroll:'
     m.description = 'Commands currently available to TextBot.'
-    m.add_field(name='Analyse a text', value='```;[a|analyse|a] [message]``` Analyse the given sentence using sentiment analysis.\n\n+ive :grinning:-:slight_smile:-:no_mouth:-:slight_frown:-:frowning2: -ive', inline=False)
+    m.add_field(name='Analyse a text', value='```;[a|analyse] [message]``` Analyse the given sentence using sentiment analysis.\n\n+ive :grinning:-:slight_smile:-:no_mouth:-:slight_frown:-:frowning2: -ive', inline=False)
     m.add_field(name='Visualize Dependency', value='```;[ad|analyse_dependency] [message]``` Render a dependency graph for the given sentence.', inline=False)
     m.add_field(name='Named Entity Recognition ', value='```;[ner|named_entity_recognition] [message]``` Detect and classify text into predefined categories or real world object entities.', inline=False)
     m.add_field(name='Explain tag or label', value='```;[e|explain] [tag|label]``` Explain a tag or label from spaCy.', inline=False)

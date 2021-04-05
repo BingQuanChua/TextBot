@@ -1,5 +1,33 @@
 # TextBot
-A sentiment analysis Discord bot build with spaCy and TextBlob during MMU Hackerspace Hackathon 2021!
+<img src="assets/ditto.PNG" alt="emoji" height="25">A sentiment analysis Discord bot build with spaCy and TextBlob during MMU Hackerspace Hackathon 2021! 
+
+
+
+## Commands
+
+`;help`- Get a list currently available commands. More commands soon :)
+
+<img src="./assets/ss-help.png" alt="help menu" style="zoom:70%;" align="left" />
+
+`;a [message]`- Analyse a given text by showing an overall emoji to indicate the extent of positiveness or negativeness in the statement. It also shows other stats such as polarity and subjectivity.
+Polarity: [-1,1] 
+Subjectivity: [0,1]
+
+| A Positive Statement                                     | A Neutral Statement                                       | A Negative Statement                                      |
+| -------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| <img src="./assets/ss-a.png" alt="a1" style="zoom:70%;"> | <img src="./assets/ss-a3.png" alt="a3" style="zoom:70%;"> | <img src="./assets/ss-a2.png" alt="a2" style="zoom:70%;"> |
+
+`;ad [message]`- Render a dependency graph from the given sentence. This show the relationship between each word and its type of parts of speech (this feature contains a bug, still fixing in progress)
+
+<img src="./assets/ss-ad.png" alt="Dependency" style="zoom:70%;" align="left" />
+
+`;ner [message]`- Detects named-entities in the sentence. NER helps to recognize the key elements in a sentence.
+
+<img src="./assets/ss-ner.png" alt="named entity recognition" style="zoom:70%;" align="left" />
+
+`;e [tag || label]`- Explains the meaning of a tag/label from spaCy.
+
+<img src="./assets/ss-e.png" alt="explain a tag" style="zoom:70%;" align="left" />
 
 
 
@@ -29,7 +57,7 @@ A sentiment analysis Discord bot build with spaCy and TextBlob during MMU Hacker
    $ python -m textblob.download_corpora
    ```
 
-6. Install svglib, which allows Python to read `.svg` files and convert them into `.png`. 
+6. Install svglib, which allows Python to read `.svg` files and convert them into `.png`. files.
 
    [Optional] Install python-decouple for reading environmental variables (for secret bot token).
 
@@ -40,3 +68,10 @@ A sentiment analysis Discord bot build with spaCy and TextBlob during MMU Hacker
 
 7. Run the bot. The bot should now be online. 
 
+
+
+## Useful Links and Learning Materials
+
+1. [SpaCy Python Tutorials by JCharisTech & J-Secur1ty](https://youtube.com/playlist?list=PLJ39kWiJXSiz1LK8d_fyxb7FTn4mBYOsD)
+2. [Code a Discord Bot with Python by freeCodeCamp](https://www.youtube.com/watch?v=SPTfmiYiuok)
+3. [Python Natural Language Processing: spaCy VS TextBlob](https://python.libhunt.com/compare-spacy-vs-textblob)
