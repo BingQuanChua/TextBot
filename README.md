@@ -1,6 +1,5 @@
 # TextBot
-<img src="assets/ditto.PNG" alt="emoji" height="25">A sentiment analysis Discord bot build with spaCy and TextBlob during MMU Hackerspace Hackathon 2021! 
-
+<img src="assets/ss-a.PNG" alt="emoji" height="25"> A sentiment analysis Discord bot build with spaCy and TextBlob during MMU Hackerspace Hackathon 2021! 
 
 
 ## Commands
