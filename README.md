@@ -1,2 +1,10 @@
 # TextBot
-Discord bot built with spaCy and textblob
+A Discord bot build with spaCy and textblob during MMU Hackerspace Hackathon 2020.
+
+## Installation
+```
+$ pip install spacy
+$ python -m spacy download en_core_web_sm
+
+$ pip install svglib
+```
