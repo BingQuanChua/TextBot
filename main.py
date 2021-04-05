@@ -26,7 +26,7 @@ score_metre = [':red_square:', ':orange_square:', ':yellow_square:', ':green_squ
 background = [':black_large_square:', ':black_large_square:', ':black_large_square:', ':black_large_square:']
 
 # spacy nlp set language
-nlp = spacy.load('en_core_web_sm')
+nlp = spacy.load("en_core_web_sm")
 nlp.add_pipe("spacytextblob")
 
 # start of the bot
