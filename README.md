@@ -10,7 +10,9 @@
 
 ### analyse a text
 `;a [message]`- Analyse a given text by showing an overall emoji to indicate the extent of positiveness or negativeness in the statement. It also shows other stats such as polarity and subjectivity.
+
 Polarity: [-1,1] 
+
 Subjectivity: [0,1]
 
 | A Positive Statement                                     | A Neutral Statement                                       | A Negative Statement                                      |
