@@ -1,12 +1,11 @@
 # TextBot
-<img src="assets/ss-a.PNG" alt="emoji" height="25"> A sentiment analysis Discord bot build with spaCy and TextBlob during MMU Hackerspace Hackathon 2021! 
-
+![textbot](https://github.com/BingQuanChua/TextBot/blob/main/assets/ditto.png?raw=true) A sentiment analysis Discord bot build with spaCy and TextBlob during MMU Hackerspace Hackathon 2021! 
 
 ## Commands
 
 `;help`- Get a list currently available commands. More commands soon :)
 
-<img src="assets/ss-help.PNG" alt="help menu" style="zoom:70%;" align="left" />
+<img src="assets/ss-help.PNG" alt="help menu">
 
 `;a [message]`- Analyse a given text by showing an overall emoji to indicate the extent of positiveness or negativeness in the statement. It also shows other stats such as polarity and subjectivity.
 Polarity: [-1,1] 
@@ -14,19 +13,19 @@ Subjectivity: [0,1]
 
 | A Positive Statement                                     | A Neutral Statement                                       | A Negative Statement                                      |
 | -------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| <img src="assets/ss-a.PNG" alt="a1" style="zoom:70%;"> | <img src="assets/ss-a3.PNG" alt="a3" style="zoom:70%;"> | <img src="assets/ss-a2.PNG" alt="a2" style="zoom:70%;"> |
+| <img src="assets/ss-a.PNG" alt="a1"> | <img src="assets/ss-a3.PNG" alt="a3"> | <img src="assets/ss-a2.PNG" alt="a2"> |
 
 `;ad [message]`- Render a dependency graph from the given sentence. This show the relationship between each word and its type of parts of speech (this feature contains a bug, still fixing in progress)
 
-<img src="assets/ss-ad.PNG" alt="Dependency" style="zoom:70%;" align="left" />
+<img src="assets/ss-ad.PNG" alt="Dependency">
 
 `;ner [message]`- Detects named-entities in the sentence. NER helps to recognize the key elements in a sentence.
 
-<img src="assets/ss-ner.PNG" alt="named entity recognition" style="zoom:70%;" align="left" />
+<img src="assets/ss-ner.PNG" alt="named entity recognition">
 
 `;e [tag || label]`- Explains the meaning of a tag/label from spaCy.
 
-<img src="assets/ss-e.PNG" alt="explain a tag" style="zoom:70%;" align="left" />
+<img src="assets/ss-e.PNG" alt="explain a tag">
 
 
 
