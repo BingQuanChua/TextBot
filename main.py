@@ -146,7 +146,6 @@ async def help(ctx):
     m.add_field(name='Visualize Dependency', value='```;[ad|analyse_dependency] [message]``` Render a dependency graph for the given sentence.', inline=False)
     m.add_field(name='Named Entity Recognition ', value='```;[ner|named_entity_recognition] [message]``` Detect and classify text into predefined categories or real world object entities.', inline=False)
     m.add_field(name='Explain tag or label', value='```;[e|explain] [tag|label]``` Explain a tag or label from spaCy.', inline=False)
-    # m.add_field(name='```;[analyse_text|at] [textfile]```', value='Upload a text file for sentiment analysis.', inline=False)
     m.set_footer(text='Hackerspace Hackathon 2021')
     await ctx.channel.send(embed=m)
 
@@ -168,4 +167,3 @@ async def analyse_error(ctx, error):
 
 # run bot
 client.run(config('TOKEN'))
-#client.run(environ.get('TOKEN'))
