@@ -1,6 +1,8 @@
 # TextBot
 ![textbot](https://github.com/BingQuanChua/TextBot/blob/main/assets/textblob.png) A sentiment analysis Discord bot build with spaCy and TextBlob during MMU Hackerspace Hackathon 2021! 
 
+
+
 ## Commands
 
 ### open help menu
@@ -38,7 +40,7 @@ Subjectivity: [0,1]
 
 ## Guide to Running TextBot Locally
 
-1. Create a new application on [Discord Developer Portal](https://discord.com/developers/applications). Add a bot and copy the token. Invite the bot to one of your servers too.
+1. Create a new application on [Discord Developer Portal](https://discord.com/developers/applications). Add a bot and copy the token. Then invite the bot to one of your servers too.
 
 2. Clone this repository.
 
@@ -62,7 +64,7 @@ Subjectivity: [0,1]
    $ python -m textblob.download_corpora
    ```
 
-6. Install svglib, which allows Python to read `.svg` files and convert them into `.png`. files.
+6. Install svglib, which allows Python to read `.svg` files and convert them into `.png` files.
 
    [Optional] Install python-decouple for reading environmental variables (for secret bot token).
 
