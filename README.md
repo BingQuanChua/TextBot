@@ -3,10 +3,12 @@
 
 ## Commands
 
+### open help menu
 `;help`- Get a list currently available commands. More commands soon :)
 
 <img src="assets/ss-help.PNG" alt="help menu">
 
+### analyse a text
 `;a [message]`- Analyse a given text by showing an overall emoji to indicate the extent of positiveness or negativeness in the statement. It also shows other stats such as polarity and subjectivity.
 Polarity: [-1,1] 
 Subjectivity: [0,1]
@@ -15,14 +17,17 @@ Subjectivity: [0,1]
 | -------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
 | <img src="assets/ss-a.PNG" alt="a1"> | <img src="assets/ss-a3.PNG" alt="a3"> | <img src="assets/ss-a2.PNG" alt="a2"> |
 
+### view dependency 
 `;ad [message]`- Render a dependency graph from the given sentence. This show the relationship between each word and its type of parts of speech (this feature contains a bug, still fixing in progress)
 
 <img src="assets/ss-ad.PNG" alt="Dependency">
 
+### named-entity recognition
 `;ner [message]`- Detects named-entities in the sentence. NER helps to recognize the key elements in a sentence.
 
 <img src="assets/ss-ner.PNG" alt="named entity recognition">
 
+### explain a tag
 `;e [tag || label]`- Explains the meaning of a tag/label from spaCy.
 
 <img src="assets/ss-e.PNG" alt="explain a tag">
