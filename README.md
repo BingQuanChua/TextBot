@@ -2,7 +2,7 @@
 ![textbot](https://github.com/BingQuanChua/TextBot/blob/main/assets/textblob.png) A sentiment analysis Discord bot build with spaCy and TextBlob during MMU Hackerspace Hackathon 2021!  
 
 
-Inspiration: _Not sure what kind of emotion your friends want to express online? Just do sentiment analysis!_
+Inspiration: _Not sure what kind of emotion your friends want to express over the internet? Just do sentiment analysis!_
 
 ## Commands
 
