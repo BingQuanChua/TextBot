@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from pathlib import Path
 from decouple import config
+import os
 
 #textblob
 from textblob import TextBlob
@@ -134,6 +135,17 @@ async def explain(ctx, *, message):
         m.description = 'There is no explaination for this Tag/Label.\n**Tags and Labels must be case-sensitive.'
         await ctx.channel.send(embed=m)
 
+@client.command(aliases=['del'])
+async def delete(ctx):
+    try:
+        os.remove('dep.svg')
+        os.remove('dep.png')
+        m = discord.Embed(description='Files deleted!')
+        await ctx.channel.send(embed=m)
+    except Exception as ex:
+        m = discord.Embed(description='Files not found!')
+        await ctx.channel.send(embed=m)
+
 # help message
 client.remove_command('help') # remove default help message
 
@@ -143,9 +155,10 @@ async def help(ctx):
     m.title = 'Help :scroll:'
     m.description = 'Commands currently available to TextBot.'
     m.add_field(name='Analyse a text', value='```;[a|analyse] [message]``` Analyse the given sentence using sentiment analysis.\n\n+ive :grinning:-:slight_smile:-:no_mouth:-:slight_frown:-:frowning2: -ive', inline=False)
-    m.add_field(name='Visualize Dependency', value='```;[ad|analyse_dependency] [message]``` Render a dependency graph for the given sentence.', inline=False)
+    m.add_field(name='Visualize Dependency', value='```;[ad|analyse_dependency] [message]``` Render a dependency graph for the given sentence. \nThis command generates a `.svg` and a `.png` file in the same directory for reference.', inline=False)
     m.add_field(name='Named Entity Recognition ', value='```;[ner|named_entity_recognition] [message]``` Detect and classify text into predefined categories or real world object entities.', inline=False)
     m.add_field(name='Explain tag or label', value='```;[e|explain] [tag|label]``` Explain a tag or label from spaCy.', inline=False)
+    m.add_field(name='Delete cache', value='```;[del|delete]``` Delete the files generated from the `;ad` command.', inline=False)
     m.set_footer(text='Hackerspace Hackathon 2021')
     await ctx.channel.send(embed=m)
 
