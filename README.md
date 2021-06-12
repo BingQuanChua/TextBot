@@ -1,5 +1,5 @@
 # TextBot
-![textbot](https://github.com/BingQuanChua/TextBot/blob/main/assets/textblob.png) A sentiment analysis Discord bot build with spaCy and TextBlob during MMU Hackerspace Hackathon 2021!  
+![textbot](https://github.com/BingQuanChua/TextBot/blob/main/assets/textblob.png) A sentiment analysis Discord bot build with spaCy and TextBlob during [MMU Hackerspace](https://hackerspacemmu.github.io/)'s 2021 Hackathon!  
 
 
 Inspiration: _Not sure what kind of emotion your friends want to express over the internet? Just do sentiment analysis!_
@@ -7,7 +7,7 @@ Inspiration: _Not sure what kind of emotion your friends want to express over th
 ## Commands
 
 ### open help menu
-`;help`- Get a list of currently available commands. More commands soon :3 
+`;help`- Get a list of currently available commands. More commands soon!
 
 <img src="assets/ss-help.PNG" alt="help menu">
 
