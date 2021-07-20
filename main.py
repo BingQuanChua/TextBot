@@ -1,10 +1,10 @@
 import discord
 from discord.ext import commands
 from pathlib import Path
-from decouple import config
 import os
+from dotenv import load_dotenv
 
-#textblob
+# textblob
 from textblob import TextBlob
 
 # spacy and friends
@@ -16,7 +16,9 @@ from spacytextblob.spacytextblob import SpacyTextBlob
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
 
-
+load_dotenv()
+secret_token = os.environ.get('TOKEN')
+print(secret_token)
 
 # client = discord.Client()
 client = commands.Bot(command_prefix=';')
@@ -140,10 +142,10 @@ async def delete(ctx):
     try:
         os.remove('dep.svg')
         os.remove('dep.png')
-        m = discord.Embed(description='Files deleted!')
+        m = discord.Embed(description='Cache files deleted!')
         await ctx.channel.send(embed=m)
-    except Exception as ex:
-        m = discord.Embed(description='Files not found!')
+    except Exception: # WindowsError for Windows user
+        m = discord.Embed(description='No cache files found!')
         await ctx.channel.send(embed=m)
 
 # help message
@@ -179,4 +181,4 @@ async def analyse_error(ctx, error):
         
 
 # run bot
-client.run(config('TOKEN'))
+client.run(secret_token)
