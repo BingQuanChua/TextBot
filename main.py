@@ -16,9 +16,9 @@ from spacytextblob.spacytextblob import SpacyTextBlob
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
 
+# load environment variable
 load_dotenv()
-secret_token = os.environ.get('TOKEN')
-print(secret_token)
+SECRET_TOKEN = os.environ.get('TOKEN')
 
 # client = discord.Client()
 client = commands.Bot(command_prefix=';')
@@ -80,7 +80,7 @@ async def analyse_dependency(ctx, *, message):
     ### use displacy to render dependency
     doc = nlp(message)
     svg = displacy.render(doc, style='dep', jupyter=False)
-
+    
     try:
         ### output as png
         output_path = Path('dep.svg')
@@ -90,7 +90,7 @@ async def analyse_dependency(ctx, *, message):
         ### convert svg to png
         drawing = svg2rlg('dep.svg')
         renderPM.drawToFile(drawing, 'dep.png', fmt='PNG')
-        #await ctx.channel.send(file=discord.File('dep.png')) 
+        #await ctx.channel.send(file=discord.File('dep.png'))
 
         ### sending embed result
         m = discord.Embed()
@@ -181,4 +181,4 @@ async def analyse_error(ctx, error):
         
 
 # run bot
-client.run(secret_token)
+client.run(SECRET_TOKEN)

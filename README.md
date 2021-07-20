@@ -1,5 +1,5 @@
-# TextBot
-![textbot](https://github.com/BingQuanChua/TextBot/blob/main/assets/textblob.png) A sentiment analysis Discord bot build with spaCy and TextBlob during [MMU Hackerspace](https://hackerspacemmu.github.io/)'s 2021 Hackathon!  
+# TextBot :speech_balloon:
+A sentiment analysis Discord bot build with spaCy and TextBlob during [MMU Hackerspace](https://hackerspacemmu.github.io/)'s 2021 Hackathon!  
 
 
 Inspiration: _Not sure what kind of emotion your friends want to express over the internet? Just do sentiment analysis!_
@@ -12,7 +12,7 @@ Inspiration: _Not sure what kind of emotion your friends want to express over th
 
 <img src="assets/ss-help.PNG" alt="help menu">
 
-### analyse a text
+### analyse text
 
 `;a [message]`- Analyse a given text by showing an overall emoji to indicate the extent of positiveness or negativeness in the statement. It also shows other stats such as polarity and subjectivity.
 
@@ -59,30 +59,28 @@ Subjectivity: [0,1]
    TOKEN=<token>
    ```
 
-4. Install the spaCy library along with the English language model.
+4. Installing packages.  
+   Install the spaCy library along with the English language model.
 
    ```
    $ pip install spacy
    $ python -m spacy download en_core_web_sm
    ```
 
-5. Install spacytextblob, which is basically spaCy + Textblob. This adds Textblob to the last step of the spaCy nlp pipline.
+   Install spacytextblob, which is basically spaCy + Textblob. This adds Textblob to the last step of the spaCy nlp pipline.
 
    ```
    $ pip install spacytextblob   
    $ python -m textblob.download_corpora
    ```
 
-6. Install svglib, which allows Python to read `.svg` files and convert them into `.png` files.
-
-   [Optional] Install python-decouple for reading environmental variables (for secret bot token).
+   Install svglib, which allows Python to read `.svg` files and convert them into `.png` files.
 
    ```
    $ pip install svglib
-   $ pip install python-decouple 
    ```
 
-7. Run the bot. The bot should now be online. 
+5. Run the bot. The bot should now be online. 
 
 ## Useful Links and Learning Materials
 
