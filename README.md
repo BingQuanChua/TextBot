@@ -10,7 +10,7 @@ Inspiration: _Not sure what kind of emotion your friends want to express over th
 
 `;help`- Get a list of currently available commands. More commands soon!
 
-<img src="assets/ss-help.PNG" alt="help menu">
+<img src="img/help_menu.PNG" alt="help menu">
 
 ### analyse text
 
@@ -22,25 +22,26 @@ Subjectivity: [0,1]
 
 | A Positive Statement                                     | A Neutral Statement                                       | A Negative Statement                                      |
 | -------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| <img src="assets/ss-a.PNG" alt="a1"> | <img src="assets/ss-a3.PNG" alt="a3"> | <img src="assets/ss-a2.PNG" alt="a2"> |
+| <img src="img/positive.PNG"> | <img src="img/neutral.PNG"> | <img src="img/negative.PNG"> |
 
 ### view dependency 
 
-`;ad [message]`- Render a dependency graph from the given sentence. This show the relationship between each word and its type of parts of speech (⚠️this feature contains a bug, still fixing in progress)
+`;ad [message]`- Render a dependency graph from the given sentence. This show the relationship between each word and its type of parts of speech  
+⚠️this feature contains a bug, still finding a way to fix
 
-<img src="assets/ss-ad.PNG" alt="Dependency">
+<img src="img/message_dependency.PNG" alt="Dependency">
 
 ### named-entity recognition
 
 `;ner [message]`- Detects named-entities in the sentence. NER helps to recognize the key elements in a sentence.
 
-<img src="assets/ss-ner.PNG" alt="named entity recognition">
+<img src="img/ner.PNG" alt="named entity recognition">
 
 ### explain a tag
 
 `;e [tag || label]`- Explains the meaning of a tag/label from spaCy.
 
-<img src="assets/ss-e.PNG" alt="explain a tag">
+<img src="img/explaining_tags.PNG" alt="explain a tag">
 
 ### deleting cache
 
@@ -81,6 +82,20 @@ Subjectivity: [0,1]
    ```
 
 5. Run the bot. The bot should now be online. 
+
+### 📦 Packages
+
+A list of packages and their respective version that were used to run the bot.
+
+```txt
+discord==1.7.3
+spacy==3.1.1
+spacytextblob==3.0.1
+textblob==0.15.3
+svglib==1.1.0
+python-dotenv==0.19.0
+flask==2.0.1
+```
 
 ## Useful Links and Learning Materials
 
