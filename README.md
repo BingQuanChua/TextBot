@@ -6,13 +6,13 @@ Inspiration: _Not sure what kind of emotion your friends want to express over th
 
 ## Commands
 
-### open help menu
+### 📜 open help menu
 
 `;help`- Get a list of currently available commands. More commands soon!
 
-<img src="img/help_menu.PNG" alt="help menu">
+<img src="img/help_menu.PNG" alt="help menu" width="400">
 
-### analyse text
+### 💬 analyse text
 
 `;a [message]`- Analyse a given text by showing an overall emoji to indicate the extent of positiveness or negativeness in the statement. It also shows other stats such as polarity and subjectivity.
 
@@ -22,28 +22,28 @@ Subjectivity: [0,1]
 
 | A Positive Statement                                     | A Neutral Statement                                       | A Negative Statement                                      |
 | -------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| <img src="img/positive.PNG"> | <img src="img/neutral.PNG"> | <img src="img/negative.PNG"> |
+| <img src="img/positive.PNG" width="180"> | <img src="img/neutral.PNG" width="176"> | <img src="img/negative.PNG" width="182"> |
 
-### view dependency 
+### 📈 view dependency 
 
 `;ad [message]`- Render a dependency graph from the given sentence. This show the relationship between each word and its type of parts of speech  
 ⚠️this feature contains a bug, still finding a way to fix
 
-<img src="img/message_dependency.PNG" alt="Dependency">
+<img src="img/message_dependency.PNG" alt="dependency" width="320">
 
-### named-entity recognition
+### 🏷️ named-entity recognition
 
 `;ner [message]`- Detects named-entities in the sentence. NER helps to recognize the key elements in a sentence.
 
-<img src="img/ner.PNG" alt="named entity recognition">
+<img src="img/ner.PNG" alt="named entity recognition" width="400">
 
-### explain a tag
+### 📖 explain a tag
 
 `;e [tag || label]`- Explains the meaning of a tag/label from spaCy.
 
-<img src="img/explaining_tags.PNG" alt="explain a tag">
+<img src="img/explaining_tags.PNG" alt="explain a tag" width="325">
 
-### deleting cache
+### 🗑️ deleting cache
 
 `;del`- Deletes cache images.
 
