@@ -16,16 +16,20 @@ from spacytextblob.spacytextblob import SpacyTextBlob
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
 
+# keep bot alive
+from keep_alive import keep_alive
+
 # load environment variable
 load_dotenv()
 SECRET_TOKEN = os.environ.get('TOKEN')
 
-# client = discord.Client()
+client = discord.Client()
 client = commands.Bot(command_prefix=';')
 
 # list of responses
-emotion = [':grinning:', ':slight_smile:', ':no_mouth:', ':slight_frown:', ':frowning2:']
+emotion = [':grinning:', ':slight_smile:', ':neutral_face:', ':slight_frown:', ':frowning2:']
 score_metre = [':red_square:', ':orange_square:', ':yellow_square:', ':green_square:', ':green_square:']
+opinion_metre = [':blue_square:', ':blue_square:', ':blue_square:', ':blue_square:', ':blue_square:']
 background = [':black_large_square:', ':black_large_square:', ':black_large_square:', ':black_large_square:']
 
 # spacy nlp set language
@@ -48,7 +52,8 @@ async def analyse(ctx, *, message):
     blob = TextBlob(message)
     stats = discord.Embed()
     stats.title='Message Stats :speech_balloon:'
-    stats.description = f'Message: ```{message}```{getStats(blob.sentiment.polarity, blob.sentiment.subjectivity)}'
+    stats.description = f'''Message: ```{message}```  
+                        {getStats(blob.sentiment.polarity, blob.sentiment.subjectivity)}'''
     await ctx.channel.send(embed=stats)
 
 def getStats(polarity, subjectivity):
@@ -56,20 +61,35 @@ def getStats(polarity, subjectivity):
     subjectivity = round(subjectivity, 2)
     if polarity >= 0.7:
         emoji = emotion[0]
-        metre = ''.join(score_metre)
+        polarity_metre = ''.join(score_metre)
     elif polarity > 0:
         emoji = emotion[1]
-        metre = ''.join(score_metre[0:4]) + ''.join(background[0:1])
+        polarity_metre = ''.join(score_metre[0:4]) + ''.join(background[0:1])
     elif polarity <= -0.7:
         emoji = emotion[4]
-        metre = ''.join(score_metre[0:1]) + ''.join(background[0:4])
+        polarity_metre = ''.join(score_metre[0:1]) + ''.join(background[0:4])
     elif polarity < 0:
         emoji = emotion[3]
-        metre = ''.join(score_metre[0:2]) + ''.join(background[0:3])
+        polarity_metre = ''.join(score_metre[0:2]) + ''.join(background[0:3])
     else:
         emoji = emotion[2]
-        metre = ''.join(score_metre[0:3]) + ''.join(background[0:2])
-    return f'\nOverall: {emoji} \n\nPolarity: {metre} {polarity} \n\nSubjectivity: {subjectivity}'
+        polarity_metre = ''.join(score_metre[0:3]) + ''.join(background[0:2])
+
+    if subjectivity >= 0.8:
+        subjectivity_meter = ''.join(opinion_metre)
+    elif subjectivity >= 0.6:
+        subjectivity_meter = ''.join(opinion_metre[0:4]) + ''.join(background[0:1])
+    elif subjectivity >= 0.4:
+        subjectivity_meter = ''.join(opinion_metre[0:3]) + ''.join(background[0:2])
+    elif subjectivity >= 0.2:
+        subjectivity_meter = ''.join(opinion_metre[0:2]) + ''.join(background[0:3])
+    else:
+        subjectivity_meter = ''.join(opinion_metre[0:1]) + ''.join(background[0:4])
+    return f'''Overall: {emoji}  
+              \nPolarity score: `{polarity}`  
+              -1 {polarity_metre} +1 
+              \nSubjectivity score: `{subjectivity}` 
+              0 {subjectivity_meter} 1 ''' 
 
 @client.command(aliases=['at'])
 async def analyse_text(ctx, *, message):
@@ -156,9 +176,15 @@ async def help(ctx):
     m = discord.Embed()
     m.title = 'Help :scroll:'
     m.description = 'Commands currently available to TextBot.'
-    m.add_field(name='Analyse a text', value='```;[a|analyse] [message]``` Analyse the given sentence using sentiment analysis.\n\n+ive :grinning:-:slight_smile:-:no_mouth:-:slight_frown:-:frowning2: -ive', inline=False)
+    m.add_field(name='Analyse a text', 
+                value='''```;[a|analyse] [message]``` Analyse the given sentence using sentiment analysis.
+                \n-ive :frowning2:-:slight_frown:-:neutral_face:-:slight_smile:-:grinning: +ive  
+                `Polarity`: the positiveness of the message; [-1, +1]  
+                `Subjectivity`: the sentence is more of an opinion or a fact; [0,1]  
+                ''', 
+                inline=False)
     m.add_field(name='Visualize Dependency', value='```;[ad|analyse_dependency] [message]``` Render a dependency graph for the given sentence. \nThis command generates a `.svg` and a `.png` file in the same directory for reference.', inline=False)
-    m.add_field(name='Named Entity Recognition ', value='```;[ner|named_entity_recognition] [message]``` Detect and classify text into predefined categories or real world object entities.', inline=False)
+    m.add_field(name='Named Entity Recognition', value='```;[ner|named_entity_recognition] [message]``` Detect and classify text into predefined categories or real world object entities.', inline=False)
     m.add_field(name='Explain tag or label', value='```;[e|explain] [tag|label]``` Explain a tag or label from spaCy.', inline=False)
     m.add_field(name='Delete cache', value='```;[del|delete]``` Delete the files generated from the `;ad` command.', inline=False)
     m.set_footer(text='Hackerspace Hackathon 2021')
@@ -176,9 +202,10 @@ async def on_command_error(ctx, error):
 @explain.error
 async def analyse_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        m = discord.Embed(description='Command incomplete! \nPlease refer to [help](https://www.youtube.com/watch?v=dQw4w9WgXcQ).')
+        m = discord.Embed(description='Command incomplete! \nPlease check command with `;help` or visit [help](https://www.youtube.com/watch?v=bxqLsrlakK8).')
         await ctx.channel.send(embed=m)
         
 
 # run bot
+keep_alive()   # UptimeRobot
 client.run(SECRET_TOKEN)
