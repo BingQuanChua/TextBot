@@ -100,12 +100,13 @@ async def named_entity_recognition(ctx, *, message):
     m = discord.Embed()
     m.title='Named-Entity Recognition :label:'
     desc = f'Message: ```{message}``` \nResult:\n'
-    for k, v in d.items():
-        desc += ('`' + k + '` : ')
-        for i in v:
-            desc += (i + ' ')
-        desc += "\n"
 
+    if len(d) > 0:
+        for k, v in d.items():
+            desc += f"`{k}` : {', '.join(v)}\n"
+    else:
+        desc += '--No named-entity found--'
+            
     m.description = desc
     await ctx.channel.send(embed=m)
 

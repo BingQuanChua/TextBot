@@ -1,4 +1,4 @@
-# TextBot :speech_balloon:
+# TextBot
 A sentiment analysis Discord bot build with spaCy and TextBlob during [MMU Hackerspace](https://hackerspacemmu.github.io/)'s 2021 Hackathon!  
 
 
